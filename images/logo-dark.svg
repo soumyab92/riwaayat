@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" width="100%" height="100%">
+  <defs>
+    <!-- Subtle gradient for imperial spruce depth -->
+    <linearGradient id="spruceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#165345"/>
+      <stop offset="100%" stop-color="#0D3E33"/>
+    </linearGradient>
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A8DEB2"/>
+      <stop offset="100%" stop-color="#8FCB9B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ========================================================================
+       CREATIVE ROYAL EMBLEM (Center: X=270, Y=52)
+       Maharaja Sarpech (Turban Jewel Crest) + Royal Cartouche + Monogram
+       ======================================================================== -->
+  <g id="royal-crest" transform="translate(270, 52)">
+    <!-- Outer Archival Halo (Dotted Heritage Ring) -->
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#8F8073" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6"/>
+
+    <!-- Royal Haveli Arch / Jharokha Cartouche -->
+    <path d="M 0 -36 
+             C 12 -36, 26 -28, 30 -16
+             C 34 -4, 34 14, 28 26
+             C 20 38, 8 42, 0 46
+             C -8 42, -20 38, -28 26
+             C -34 14, -34 -4, -30 -16
+             C -26 -28, -12 -36, 0 -36 Z" 
+          fill="#EAE6E5" stroke="#0D3E33" stroke-width="2"/>
+
+    <!-- Inner Gilded Accent Border -->
+    <path d="M 0 -31 
+             C 9 -31, 21 -24, 25 -14
+             C 29 -4, 29 11, 23 21
+             C 16 31, 6 35, 0 39
+             C -6 35, -16 31, -23 21
+             C -29 11, -29 -4, -25 -14
+             C -21 -24, -9 -31, 0 -31 Z" 
+          fill="none" stroke="#8FCB9B" stroke-width="1"/>
+
+    <!-- Imperial Kalgi / Sarpech Feather Plume (Crown of Indian Men's Royalty) -->
+    <path d="M 0 -48 
+             C 4 -43, 6 -38, 0 -33
+             C -6 -38, -4 -43, 0 -48 Z" 
+          fill="#8FCB9B" stroke="#0D3E33" stroke-width="1"/>
+    <!-- Flanking Plume Sprigs -->
+    <path d="M -6 -44 C -2 -42, -1 -37, -3 -34" fill="none" stroke="#8FCB9B" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 6 -44 C 2 -42, 1 -37, 3 -34" fill="none" stroke="#8FCB9B" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Kalgi Ruby / Emerald Finial Gem -->
+    <circle cx="0" cy="-33" r="2.5" fill="#0D3E33"/>
+    <circle cx="0" cy="-48" r="1.5" fill="#8FCB9B"/>
+
+    <!-- Twin Flanking Heraldic Leaves -->
+    <path d="M -30 0 C -36 -6, -42 -2, -40 6 C -38 14, -32 16, -26 12" fill="none" stroke="#8FCB9B" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 30 0 C 36 -6, 42 -2, 40 6 C 38 14, 32 16, 26 12" fill="none" stroke="#8FCB9B" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Intertwined Royal Monogram 'R' (Calligraphic Couture Flourish) -->
+    <!-- Stem of 'R' -->
+    <path d="M -8 -18 L -8 18" stroke="#0D3E33" stroke-width="3" stroke-linecap="round"/>
+    <!-- Serif foot of 'R' -->
+    <path d="M -12 18 L -4 18" stroke="#0D3E33" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -12 -18 L -2 -18" stroke="#0D3E33" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Upper Bowl of 'R' with regal sweep -->
+    <path d="M -8 -18 C 6 -18, 14 -14, 14 -5 C 14 3, 6 6, -8 6" fill="none" stroke="#0D3E33" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- Inner Bowl Accent Line in Sage Jade -->
+    <path d="M -6 -14 C 3 -14, 9 -11, 9 -5 C 9 1, 3 3, -6 3" fill="none" stroke="#8FCB9B" stroke-width="1"/>
+    <!-- Graceful Curving Leg of 'R' with Royal Flèche -->
+    <path d="M 2 4 C 5 7, 8 13, 14 18" fill="none" stroke="#0D3E33" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="14" cy="18" r="1.5" fill="#8FCB9B"/>
+
+    <!-- Base Crest Diamond Seal -->
+    <polygon points="0,27 4,32 0,37 -4,32" fill="#8FCB9B" stroke="#0D3E33" stroke-width="0.8"/>
+  </g>
+
+  <!-- ========================================================================
+       BRAND WORDMARK & TYPOGRAPHY
+       ======================================================================== -->
+  <!-- Main Brand Title: RIWAAYAT in Imperial Spruce #0D3E33 -->
+  <text x="270" y="130" 
+        font-family="'Cormorant Garamond', 'Cinzel', 'Playfair Display', Georgia, serif" 
+        font-size="36" 
+        font-weight="700" 
+        letter-spacing="12" 
+        fill="#0D3E33" 
+        text-anchor="middle">RIWAAYAT</text>
+
+  <!-- Flanking Ornamental Hairlines & Royal Starbursts -->
+  <g stroke="#8FCB9B" stroke-width="1.2">
+    <!-- Left Divider -->
+    <line x1="80" y1="146" x2="185" y2="146"/>
+    <!-- Left 4-Point Starburst (✦) -->
+    <path d="M 195 146 L 198 141 L 201 146 L 198 151 Z" fill="#8FCB9B" stroke="none"/>
+    <circle cx="190" cy="146" r="1.5" fill="#0D3E33"/>
+
+    <!-- Right 4-Point Starburst (✦) -->
+    <path d="M 339 146 L 342 141 L 345 146 L 342 151 Z" fill="#8FCB9B" stroke="none"/>
+    <circle cx="350" cy="146" r="1.5" fill="#0D3E33"/>
+    <!-- Right Divider -->
+    <line x1="355" y1="146" x2="460" y2="146"/>
+  </g>
+
+  <!-- Luxury Subtitle in Warm Antique Taupe #8F8073 -->
+  <text x="270" y="150" 
+        font-family="'Outfit', -apple-system, sans-serif" 
+        font-size="9.5" 
+        font-weight="600" 
+        letter-spacing="5" 
+        fill="#8F8073" 
+        text-anchor="middle">ROYAL MEN'S COUTURE · ATELIER</text>
+</svg>

@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
           <p style="font-family: var(--font-sans); font-weight: 600;">Your Royal Shopping Bag is empty</p>
-          <button class="btn-primary" style="margin-top: 1rem;" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'}); document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open');">EXPLORE MENSWEAR</button>
+          <button class="btn-primary" style="margin-top: 1rem;" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'}); document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open');"><span>EXPLORE MENSWEAR</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
         </div>
       `;
     } else {
@@ -437,6 +437,81 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 300);
     }, 3200);
   };
+
+  /* ==========================================================================
+     Real Patron Reviews Slider Logic
+     ========================================================================== */
+  const reviewsSlider = document.getElementById('reviewsSlider');
+  const reviewsPrevBtn = document.getElementById('reviewsPrevBtn');
+  const reviewsNextBtn = document.getElementById('reviewsNextBtn');
+  const reviewDots = document.querySelectorAll('.review-dot');
+
+  if (reviewsSlider) {
+    const scrollAmount = () => {
+      const firstCard = reviewsSlider.querySelector('.review-card');
+      return firstCard ? firstCard.offsetWidth + 28 : 360;
+    };
+
+    if (reviewsNextBtn) {
+      reviewsNextBtn.addEventListener('click', () => {
+        reviewsSlider.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    if (reviewsPrevBtn) {
+      reviewsPrevBtn.addEventListener('click', () => {
+        reviewsSlider.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    // Update active dot on scroll
+    reviewsSlider.addEventListener('scroll', () => {
+      const index = Math.round(reviewsSlider.scrollLeft / scrollAmount());
+      reviewDots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+      });
+    });
+
+    // Dot click
+    reviewDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        reviewsSlider.scrollTo({ left: idx * scrollAmount(), behavior: 'smooth' });
+      });
+    });
+  }
+
+  /* ==========================================================================
+     Color Swatches Selection Logic
+     ========================================================================== */
+  document.querySelectorAll('.product-swatches').forEach(swatchesContainer => {
+    const dots = swatchesContainer.querySelectorAll('.swatch-dot');
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+        const colorName = dot.getAttribute('title');
+        if (colorName) {
+          showToast(`Selected Fabric Tone: ${colorName}`);
+        }
+      });
+    });
+  });
+
+  /* ==========================================================================
+     Newsletter Interest Chips Logic
+     ========================================================================== */
+  document.querySelectorAll('.interest-chip').forEach(chip => {
+    const radio = chip.querySelector('input[type="radio"]');
+    if (radio) {
+      radio.addEventListener('change', () => {
+        document.querySelectorAll('.interest-chip').forEach(c => c.classList.remove('active'));
+        if (radio.checked) {
+          chip.classList.add('active');
+        }
+      });
+    }
+  });
 
   // Initial render
   renderCart();
